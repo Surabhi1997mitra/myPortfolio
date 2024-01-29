@@ -1,4 +1,5 @@
 /.pnp
+/build
 /coverage
 /node_modules
 /src/globals.json
