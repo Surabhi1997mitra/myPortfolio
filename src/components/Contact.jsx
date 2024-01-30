@@ -1,31 +1,21 @@
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
+    const form = useRef();
 
-    function encode(data) {
-        return Object.keys(data)
-          .map(
-            (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-          )
-          .join("&");
-      }
-
-      function handleSubmit(e) {
+    function handleSubmit(e) {
         e.preventDefault();
-        fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encode({ "form-name": "contact", name, email, message }),
-        })
-          .then(() => alert("Message sent!"))
-          .catch((error) => alert(error));
-      }
+        emailjs.sendForm('service_94th3gj', 'template_fjeqa2m', form.current, 'DYMqfW7ypnnw1VON1')
+            .then(() => alert("Message sent!"))
+            .catch((error) => alert(error));
+    }
 
-      
+
     return (
         <section id="contact" className="relative">
             <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
@@ -66,18 +56,15 @@ const Contact = () => {
                     </div>
                 </div>
                 <form
+                    ref={form}
                     netlify
                     name="contact"
                     className="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0"
                     onSubmit={handleSubmit}
-                    >
+                >
                     <h2 className="text-white sm:text-4xl text-3xl mb-1 font-medium title-font">
                         Hire Me
                     </h2>
-                    {/* <p className="leading-relaxed mb-5">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum
-                        suscipit officia aspernatur veritatis. Asperiores, aliquid?
-                    </p> */}
                     <div className="relative mb-4">
                         <label htmlFor="name" className="leading-7 text-sm text-gray-400">
                             Name
@@ -120,6 +107,9 @@ const Contact = () => {
                         className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
                         Submit
                     </button>
+                    <p>
+                        or, feel free to drop me a message on Whatsapp on this number - (8637568054) 
+                    </p>
                 </form>
             </div>
         </section>
