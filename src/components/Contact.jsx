@@ -10,7 +10,7 @@ const Contact = () => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        emailjs.sendForm('service_94th3gj', 'template_fjeqa2m', form.current, 'DYMqfW7ypnnw1VON1')
+        emailjs.sendForm('service_94th3gj', 'template_1234', form.current, 'DYMqfW7ypnnw1VON1')
             .then(() => alert("Message sent!"))
             .catch((error) => alert(error));
     }
