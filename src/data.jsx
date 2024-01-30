@@ -63,10 +63,11 @@ export const skills = [
 
 export const educations = [
   {
-    degreeName: "All India Secondary",
-    institute: "A. G. Church School",
-    year: "2014",
-    percentage: "93.8%"
+    degreeName: "Bachelor of Technology",
+    institute: "Indian Institute of Engineering Science and Technology, Shibpur",
+    stream: "Electronics and Telecommunication Engineering",
+    year: "2017 - 2021",
+    gpa: "8.89"
   },
   {
     degreeName: "All India Senior Secondary",
@@ -75,10 +76,9 @@ export const educations = [
     percentage: "92.8%"
   },
   {
-    degreeName: "Bachelor of Technology",
-    institute: "Indian Institute of Engineering Science and Technology, Shibpur",
-    stream: "Electronics and Telecommunication Engineering",
-    year: "2017 - 2021",
-    gpa: "8.89"
-  }
+    degreeName: "All India Secondary",
+    institute: "A. G. Church School",
+    year: "2014",
+    percentage: "93.8%"
+  },
 ]
